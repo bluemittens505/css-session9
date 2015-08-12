@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Gallery</title>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+	<script>
+	$(document).ready(function(){
+		$('#imageGallery a').on('click', function(){
+			$('#placeholder').attr('src', this.href );
+			$('#description').html(this.title );
+			console.log(this);
+			return false;
+		});
+	});
+
+	//(function(){
+		//
+	//})();
+
+	// window.onload = function(){
+	// 	prepareGallery();
+	// };
+
+	// function prepareGallery(){
+	// 	var gallery = document.getElementById("imageGallery");
+	// 	var links = gallery.getElementsByTagName("a");
+	// 	for ( var i = 0; i < links.length; i = i+1 ) {
+	// 		links[i].onclick = function(){
+	// 			showPicOne(this);
+	// 			return false;
+	// 		}
+	// 	}
+	// };
+
+	// function showPicOne(whichpic){
+	// 	var source = whichpic.getAttribute("href");
+	// 	var placeholder = document.getElementById("placeholder");
+	// 	placeholder.setAttribute("src", source );
+	// 	var text = whichpic.getAttribute("title");
+	// 	var description = document.getElementById("description");
+	// 	description.firstChild.nodeValue = text;
+	// 	console.log(description.childNodes[0].nodeValue);
+	// };
+	</script>
+</head>
+
+<body>
+	<div>
+		<h1>Image Gallery</h1>
+		<div id="mainNav">
+			<ul id="imageGallery">
+				<li><a href="img/pagoda.jpg" title="Temple by a river">Pagoda</a></li>
+				<li><a href="img/bridge.jpg" title="Shrine">Bridge</a></li>
+				<li><a href="img/bamboo.jpg" title="Bamboo">Bamboo</a></li>
+				<li><a href="img/stairway.jpg" title="Red stairway">Stairway</a></li>
+			</ul>
+		</div>
+
+		<div id="content">
+			<img id="placeholder" src="img/placeholder.gif" alt="Placeholder">
+			<p id="description">Select an image.</p>
+		</div>
+
+		<!-- onmouseover="this.style.backgroundColor ='#000'"  -->
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
