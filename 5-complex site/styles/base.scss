@@ -2,8 +2,8 @@ $link: #4e7c92;
 
 $max-width: 940px;
 
-$breakpoint: 520px;
-$breakpoint-med: 768px;
+$breakpoint: 32.5rem;
+$breakpoint-med: 48em;
 
 @import "reset";
 @import "navigation";
@@ -18,6 +18,15 @@ $breakpoint-med: 768px;
 .clearfix {
 	*zoom: 1;
 }
+
+/* changes box-sizing for everything on the page */
+*, *:before, *:after {
+box-sizing: inherit;
+}
+html {
+box-sizing: border-box;
+}
+
 
 body {
 	font: 100%/1.5 Cambria, Garamond, Georgia, Times, serif;
@@ -98,17 +107,135 @@ h1 {
 	padding: 1rem;
 }
 
+.btn-list {
+	padding: 0.5rem;
+	li {
+		display: inline-block;
+		margin-right:1.5rem;
+		margin-bottom:1rem;
+	}
+	.active {
+		background: $link;
+		border-radius: 0.25rem;
+		text-shadow: none;
+		color: #fff;
+		padding: 0.4rem;
+	}
 
+}
 
+.footer {
+	margin-top: 2rem;
+	background-color: $link;
+	min-height: 20rem;
 
+	.siteinfo {
+		max-width: $max-width;
+		margin: 0 auto;
+		color: #fff;
+		text-shadow: none;
 
+		p, ul, .vcard {
+			width: 33%;
+			padding: 1rem;
+			float: left;
+		}
+	}
+	.siteinfo a {
+		color: #fff;
+	}
+}
 
+.nav-sub {
+	margin-top: 16px;
+	padding: 20px;
+	background-color: #f8f7f3;
+	border: 1px solid #bfbfbf;
 
+	li { 
+		margin:6px 0;
+	}
+	ul {
+		display:none;
+	}
+	li:first-child ul {
+		display:block;
+	}
+	> li > a { 
+		font-weight:bold;
+	}
+	ul li {
+		padding-left:12px;
+	}
+}
 
+.secondary .content-sub {
+	li {
+		float: left;
+		width: 33.333%;
+		padding: 10px;
+	}
 
+	li img {
+		padding: 10px;
+		background-color: #fff;
+		border: 1px solid #bfbfbf;
+		border-bottom-color: #7c7c7a;
+		width: 100%;
+		height: auto;
+		transition: all 0.2s linear;
+	}
 
+	li img:hover {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1);
+		box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+	}
+}
 
+.content-slider {
+	position: relative;
+	p {
+		width: 100%;
+		padding: 6px;
+		background: rgba(255,255,255,0.7);
+		position: absolute;
+		bottom: 0;
+	}
+}
 
+.content-sub p img {
+	width: auto;
+}
+
+a[rel="alternate"] {
+	padding-left: 2rem;
+	/* method 1 */
+	/*background: url(feed-icon.svg) no-repeat;*/
+	/* method 2 */
+	background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2l
+kdGg9IjEyOCIgaGVpZ2h0PSIxMjgiIGlkPSJSU1NpY29uIiB2aWV3Qm94PSIwIDAgMjU2IDI1Ni
+I+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgeDE9IjAuMDkiIHkxPSIwLjA5IiB4Mj0iM
+C45MiIgeTI9IjAuOTIiIGlkPSJSU1NnIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNv
+bG9yPSIjRTM3MDJEIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4xMSIgc3RvcC1jb2xvcj0iI0V
+BN0QzMSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMzUiIHN0b3AtY29sb3I9IiNGNjk1MzciLz
+4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjUiIHN0b3AtY29sb3I9IiNGQjlFM0EiLz4KICAgICAgP
+HN0b3Agb2Zmc2V0PSIwLjciIHN0b3AtY29sb3I9IiNFQTdDMzEiLz4KICAgICAgPHN0b3Agb2Zm
+c2V0PSIwLjg5IiBzdG9wLWNvbG9yPSIjREU2NDJCIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSI
+gc3RvcC1jb2xvcj0iI0Q5NUIyOSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+Ci
+AgPHJlY3Qgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiIHJ4PSI1NSIgcnk9IjU1IiB4PSIwIiB5P
+SIwIiBmaWxsPSIjQ0M1RDE1Ii8+CiAgPHJlY3Qgd2lkdGg9IjI0NiIgaGVpZ2h0PSIyNDYiIHJ4
+PSI1MCIgcnk9IjUwIiB4PSI1IiB5PSI1IiBmaWxsPSIjRjQ5QzUyIi8+CiAgPHJlY3Qgd2lkdGg
+9IjIzNiIgaGVpZ2h0PSIyMzYiIHJ4PSI0NyIgcnk9IjQ3IiB4PSIxMCIgeT0iMTAiIGZpbGw9In
+VybCgjUlNTZykiLz4KICA8Y2lyY2xlIGN4PSI2OCIgY3k9IjE4OSIgcj0iMjQiIGZpbGw9IiNGR
+kYiLz4KICA8cGF0aCBkPSJNMTYwIDIxM2gtMzRhODIgODIgMCAwIDAtODItODJ2LTM0YTExNiAx
+MTYgMCAwIDEgMTE2IDExNnoiIGZpbGw9IiNGRkYiLz4KICA8cGF0aCBkPSJNMTg0IDIxM0ExNDA
+gMTQwIDAgMCAwIDQ0IDczVjM4YTE3NSAxNzUgMCAwIDEgMTc1IDE3NXoiIGZpbGw9IiNGRkYiLz
+4KPC9zdmc+") no-repeat;
+	/* method 3 */
+	/*background: url(data:image/svg+xml;cahrset=UTF-8, ) no-repeat;*/
+	background-size: contain;
+}
 
 
 
